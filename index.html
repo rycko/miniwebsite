@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Mini website</title>
+	<style type="text/css">
+		*{
+			box-sizing: border-box;
+		}
+		body{
+			background-color: #000000;
+			color: white;
+			font: 1em (arial);
+		}
+		.tabbed{
+			max-width: 700px;
+			margin: 50px auto;
+		}
+		.tabbed > input{
+			display: none;
+		}
+		.tabbed > label{
+			display: block;
+			float: left;
+			padding: 12px 20px;
+			margin-right: 10px;
+			cursor: pointer;
+			transition: background-color 0.3s;
+
+		}
+		.tabbed > label:hover,
+		.tabbed > input:checked + label{
+			background: #e91e73;
+		} 
+		.tabs{
+			clear: both;
+			perspective: 599px;
+			margin-left: 0px;
+		}
+		.tabs > div{
+			max-width: 780px;
+			position: absolute;
+			border: 4px solid #e91e73;
+			padding: 10px 30px 40px;
+
+			line-height: 1.4em;
+			opacity: 0;
+			transform: rotateX(-20deg);
+			transform-origin: top center;
+			transition: opacity 0.3s, transform 1s;
+			z-index: 0; 
+		}
+		#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+		#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+		#tab-nav-3:checked ~ .tabs > div:nth-of-type(3),
+		#tab-nav-4:checked ~ .tabs > div:nth-of-type(4){
+			transform: rotateX(0);
+			opacity: 1;
+			z-index: 1;
+		}
+
+	</style>
+</head>
+<body>
+
+<br><br><br>
+	<div class="tabbed">
+
+		<input type="radio" name="tabs" id="tab-nav-1" checked>
+		<label for="tab-nav-1">page 1</label>
+		<input type="radio" name="tabs" id="tab-nav-2">
+		<label for="tab-nav-2">page 2</label>
+		<input type="radio" name="tabs" id="tab-nav-3">
+		<label for="tab-nav-3">page 3</label>
+		<input type="radio" name="tabs" id="tab-nav-4">
+		<label for="tab-nav-4">page 4</label>
+
+		<div class="tabs">
+
+			<div>
+				<h2>page 1</h2>
+				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+				
+			</div><div>
+			<h2>page 2</h2>
+				<p>
+				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+				consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+				cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+				proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div><div>
+				<h2>page 3</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div><div>
+				<h2>page 4</h2>
+				<p>
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+				</p>
+			</div>
+
+		</div>
+
+	</div>
+
+</body>
+</html>
